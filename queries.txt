@@ -1,0 +1,14 @@
+1.A query that counts the number of customers who gave the models a 10 0ut 10 rating:
+SELECT COUNT(email) FROM customers WHERE rating = "10"; 
+
+2. A query that returns the email,name and gender of the model hired by a customer by joining the model's table to the customer's table:
+SELECT email,name,gender FROM models JOIN customers WHERE customers.id = models.id;
+
+3. A query that counts the number of customers who ordered for female models:
+SELECT COUNT(email) FROM customers JOIN models WHERE customers.id = models.id AND models.gender LIKE "%F%"
+
+4.A query that counts the number of customers who issued a cash payment to the agency:
+SELECT COUNT(c_id) FROM receipts JOIN payments WHERE p_id = payments.payment_id AND payment_type LIKE "%cash%";
+
+5. The following is a query to list the emails of the customers who hired models for a runway .
+SELECT email FROM customers WHERE id IN (SELECT c_id FROM receipts WHERE e_id IN (SELECT event_id FROM event WHERE event_type LIKE "%runway%"))

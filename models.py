@@ -31,8 +31,8 @@ db.execute("""CREATE TABLE payments(
     );""")
 
 db.execute("""CREATE TABLE event(
-    function_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    function_type TEXT 
+    event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event_type TEXT 
     );""")
 
 db.execute("""CREATE TABLE receipts(
